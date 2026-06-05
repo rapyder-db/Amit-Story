@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Rapyder Cloud Quest - 3 Level AI Pet Platform Game</title>
+    <meta
+      name="description"
+      content="A Rapyder-themed 3-level browser platform story game with an AI pet companion, inspired by classic 8-bit adventure energy."
+    >
+    <meta name="theme-color" content="#111827">
+    <link rel="preload" as="image" href="./src/hero/Rapyder_Run.png">
+    <link rel="preload" as="image" href="./mascot/Mascot_Side_Look.png">
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#gameCanvas" aria-label="Rapyder Cloud Quest home">
+          <span class="pixel-logo" aria-hidden="true">R</span>
+          <span>
+            <strong>Rapyder Cloud Quest</strong>
+            <small>3-level AI pet platform story</small>
+          </span>
+        </a>
+        <div class="top-actions">
+          <button id="pauseButton" type="button">Pause</button>
+          <button id="restartButton" type="button">Restart</button>
+        </div>
+      </header>
+
+      <section class="game-shell" aria-label="Rapyder Cloud Quest game">
+        <div class="hud" aria-label="Game status">
+          <div>
+            <span>Level</span>
+            <strong id="levelName">Rapyder Ridge</strong>
+          </div>
+          <div>
+            <span>Signals</span>
+            <strong id="signalCount">0 / 0</strong>
+          </div>
+          <div>
+            <span>Trust</span>
+            <strong id="trustScore">0</strong>
+          </div>
+          <div>
+            <span>Lives</span>
+            <strong id="lifeCount">3</strong>
+          </div>
+        </div>
+
+        <div class="canvas-frame">
+          <canvas id="gameCanvas" width="960" height="540" aria-label="Playable retro platform game"></canvas>
+          <div class="story-modal" id="storyModal">
+            <div class="story-copy">
+              <p class="eyebrow" id="storyKicker">Mission Brief</p>
+              <h1 id="storyTitle">Rapyder Ridge</h1>
+              <p id="storyText"></p>
+              <button id="storyAction" type="button">Start level</button>
+            </div>
+            <div class="modal-art">
+              <img class="modal-hero" id="modalHero" alt="">
+              <img class="modal-mascot" src="./mascot/Mascot_Front_Look.png" alt="CloudEVA mascot companion" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="button" data-control="left" aria-label="Move left">Left</button>
+          <button type="button" data-control="right" aria-label="Move right">Right</button>
+          <button type="button" data-control="jump" aria-label="Jump">Jump</button>
+          <button type="button" data-control="interact" aria-label="Interact">Talk</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Original Rapyder-themed browser game. No cloud upload. Progress stays in this page session.</span>
+        <a href="./docs/research-plan-execution.md">Research and execution notes</a>
+      </footer>
+    </main>
+
+    <script src="./src/story.js"></script>
+    <script src="./src/levels.js"></script>
+    <script src="./src/game.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
