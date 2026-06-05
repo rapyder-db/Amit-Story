@@ -20,7 +20,7 @@ window.RCQ_LEVELS = [
       { x: 1020, y: 370, w: 190, h: 30, type: "brick" },
       { x: 1360, y: 320, w: 250, h: 30, type: "cloud" },
       { x: 1780, y: 360, w: 220, h: 30, type: "brick" },
-      { x: 2140, y: 315, w: 280, h: 30, type: "cloud" },
+      { x: 2120, y: 315, w: 280, h: 30, type: "cloud" },
     ],
     collectibles: [
       { x: 420, y: 316, label: "INFRA" },
@@ -28,7 +28,7 @@ window.RCQ_LEVELS = [
       { x: 1100, y: 326, label: "CLOUD" },
       { x: 1450, y: 276, label: "AWS" },
       { x: 1880, y: 316, label: "SCALE" },
-      { x: 2260, y: 270, label: "TRUST" },
+      { x: 2240, y: 270, label: "TRUST" },
     ],
     hazards: [
       { x: 560, y: 416, w: 46, h: 28, type: "spark" },
@@ -39,9 +39,9 @@ window.RCQ_LEVELS = [
       {
         x: 1510,
         y: 382,
-        label: "Amit",
+        label: "Signal",
         text:
-          "Amit: Start with infrastructure reality, but keep customer value as the flag. Cloud must work for the business.",
+          "Founder Signal: Build from infrastructure reality. The flag is customer trust, not technology for its own sake.",
       },
     ],
   },
@@ -66,7 +66,7 @@ window.RCQ_LEVELS = [
       { x: 990, y: 380, w: 210, h: 30, type: "cloud" },
       { x: 1350, y: 325, w: 230, h: 30, type: "brick" },
       { x: 1740, y: 365, w: 230, h: 30, type: "cloud" },
-      { x: 2160, y: 315, w: 290, h: 30, type: "brick" },
+      { x: 2140, y: 315, w: 290, h: 30, type: "brick" },
     ],
     collectibles: [
       { x: 380, y: 326, label: "OWNER" },
@@ -74,7 +74,7 @@ window.RCQ_LEVELS = [
       { x: 1060, y: 336, label: "RISK" },
       { x: 1435, y: 280, label: "AUDIT" },
       { x: 1830, y: 320, label: "EVA" },
-      { x: 2300, y: 270, label: "ACT" },
+      { x: 2280, y: 270, label: "ACT" },
     ],
     hazards: [
       { x: 520, y: 416, w: 48, h: 28, type: "bot" },
@@ -85,16 +85,16 @@ window.RCQ_LEVELS = [
       {
         x: 880,
         y: 382,
-        label: "Amit",
+        label: "Signal",
         text:
-          "Amit: After cloud adoption, the next challenge is decision quality. Teams need explainable action, not silent automation.",
+          "Founder Signal: Now that the cloud foundation exists, the next test is decision quality. Action must be explainable.",
       },
       {
         x: 1580,
         y: 382,
-        label: "EVA",
+        label: "EVA Node",
         text:
-          "EVA: Explain, verify, advise, act. No silent magic. Every cloud decision needs a trail.",
+          "EVA: Explain, verify, advise, act. I turn cloud noise into a decision trail.",
       },
     ],
   },
@@ -119,7 +119,7 @@ window.RCQ_LEVELS = [
       { x: 1050, y: 375, w: 250, h: 30, type: "cloud" },
       { x: 1500, y: 330, w: 220, h: 30, type: "brick" },
       { x: 1900, y: 365, w: 210, h: 30, type: "cloud" },
-      { x: 2280, y: 315, w: 300, h: 30, type: "brick" },
+      { x: 2250, y: 315, w: 300, h: 30, type: "brick" },
     ],
     collectibles: [
       { x: 410, y: 316, label: "MAIL" },
@@ -127,7 +127,7 @@ window.RCQ_LEVELS = [
       { x: 1150, y: 330, label: "MEET" },
       { x: 1580, y: 285, label: "DEAL" },
       { x: 1980, y: 320, label: "SIGNAL" },
-      { x: 2420, y: 270, label: "LENZ" },
+      { x: 2390, y: 270, label: "LENZ" },
     ],
     hazards: [
       { x: 610, y: 416, w: 48, h: 28, type: "leak" },
@@ -138,16 +138,16 @@ window.RCQ_LEVELS = [
       {
         x: 1260,
         y: 382,
-        label: "Amit",
+        label: "Signal",
         text:
-          "Amit: Business value appears when signals become action. One view helps teams move from activity to outcomes.",
+          "Founder Signal: Business value appears when signals become action. One lens turns activity into outcomes.",
       },
       {
         x: 1720,
         y: 382,
         label: "Buyer",
         text:
-          "Buyer: I do not need more dashboards. I need the signal tied to the deal I can act on.",
+          "Buyer: I do not need more dashboards. I need the right signal tied to the next deal action.",
       },
     ],
   },

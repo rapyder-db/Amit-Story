@@ -226,10 +226,15 @@ canvas {
   position: absolute;
   right: -12px;
   bottom: -10px;
+  display: none;
   width: min(116px, 14vw);
   max-width: 100%;
   filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.35));
   pointer-events: none;
+}
+
+.modal-mascot.is-visible {
+  display: block;
 }
 
 .eyebrow {

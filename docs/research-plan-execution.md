@@ -53,7 +53,7 @@ The public story around Amit Gupta and Rapyder points to a founder-led cloud com
 - cloud operations and managed services
 - practical business outcomes rather than cloud for its own sake
 
-This is interpreted in the game as a founder signal: infrastructure experience leads to customer-first cloud transformation, then to decision intelligence and business signal intelligence. The game does not attempt to recreate Amit Gupta as a visual likeness or simulate his personality. He appears as a neutral founder-mentor checkpoint based on public themes.
+This is interpreted in the game as a founder signal: infrastructure experience leads to customer-first cloud transformation, then to decision intelligence and business signal intelligence. Amit is the main hero in the game, while the checkpoint text stays framed as abstract "Founder Signal" guidance based on public themes.
 
 ## 4. Website Theme Research
 
@@ -94,17 +94,17 @@ Relevant game translation:
 
 Working title: Rapyder Cloud Quest.
 
-Player character: Maya, a Rapyder cloud guide.
+Player character: Amit, the founder-led main hero based on Amit Gupta's public Rapyder story.
 
-AI pet: EVA, a CloudEVA mascot companion that follows the player and translates messy signals into level objectives.
+AI pet: EVA, the CloudEVA mascot. EVA unlocks after Level 1 as an upgrade gift and then follows Amit through Levels 2 and 3.
 
 Story premise:
 
-Maya and EVA move across three worlds. Each world represents one chapter of a public founder-led business arc:
+Amit moves across three worlds. Level 1 is completed alone to prove the Rapyder cloud foundation. After crossing Level 1, EVA appears as the CloudEVA upgrade gift and joins the rest of the journey. Each world represents one chapter of a public founder-led business arc:
 
-1. Rapyder Ridge: Amit's infrastructure experience becomes a customer-ready cloud foundation.
-2. Decision Loop Lagoon: the cloud foundation evolves into CloudEVA-style governance and explainable action.
-3. Revenue Signal Ruins: customer and commercial activity connect through OneLenz-style signal intelligence.
+1. Rapyder Ridge: Amit builds before scaling, turning infrastructure discipline into a customer-ready cloud foundation.
+2. Decision Loop Lagoon: EVA unlocks the decision layer, turning cloud operations into explainable action.
+3. Revenue Signal Ruins: Amit and EVA connect business signals through OneLenz-style signal intelligence.
 
 The story frame is intentionally simple: collect the founder signals, avoid the risks, talk to mentor/NPC checkpoints, and reach the goal gate.
 
@@ -135,11 +135,11 @@ Hazards:
 
 NPC:
 
-- Amit founder-mentor text prompt about infrastructure reality and customer value.
+- Founder Signal text prompt about infrastructure reality and customer value.
 
 Completion meaning:
 
-The customer team moves from scattered workloads to a clear cloud migration route.
+Amit proves the Rapyder foundation: cloud is not only migration, it is trust, operations, and customer value. EVA unlocks after this level.
 
 ### Level 2: Decision Loop Lagoon
 
@@ -166,12 +166,12 @@ Hazards:
 
 NPC:
 
-- Amit founder-mentor checkpoint about decision quality.
+- Founder Signal checkpoint about decision quality.
 - EVA decision companion.
 
 Completion meaning:
 
-Every important cloud change has context, ownership, and an outcome check.
+Amit and EVA turn cloud operations into decision intelligence: every action has a reason, owner, risk signal, and trail.
 
 ### Level 3: Revenue Signal Ruins
 
@@ -198,12 +198,12 @@ Hazards:
 
 NPC:
 
-- Amit founder-mentor checkpoint about business signals becoming action.
+- Founder Signal checkpoint about business signals becoming action.
 - Buyer signal prompt.
 
 Completion meaning:
 
-The team turns disconnected sales activity into a coherent deal signal path.
+Amit and EVA connect scattered commercial activity into one business lens.
 
 ## 7. Gameplay Systems
 
@@ -268,7 +268,7 @@ Purpose of each file:
 
 - `index.html`: app shell, canvas, HUD, story modal, mobile controls.
 - `src/styles.css`: responsive app UI and pixel-game presentation.
-- `src/story.js`: story data, level briefs, ending text, founder-mentor framing.
+- `src/story.js`: story data, level briefs, ending text, founder-led framing.
 - `src/levels.js`: platform layouts, collectibles, hazards, NPCs, visual themes.
 - `src/game.js`: game engine, physics, collisions, rendering, scoring, level progression.
 - `src/main.js`: DOM wiring, input binding, story modal actions.
@@ -284,10 +284,12 @@ Completed:
 - Implemented 3 levels with unique visual themes and business meanings.
 - Added AI pet follow behavior.
 - Replaced the placeholder blue pet with the CloudEVA mascot files from `mascot/`.
+- Changed the CloudEVA mascot flow so EVA appears only after crossing Level 1 as an upgrade gift.
+- Corrected the role model: Amit is the main hero; EVA is only the CloudEVA mascot companion.
 - Added research-backed story framing.
 - Reworked the narrative into a founder-led Amit Gupta arc: infrastructure experience, Rapyder cloud foundation, CloudEVA decision intelligence, and OneLenz business signal intelligence.
 - Replaced generic collectibles with founder/story signals across all three levels.
-- Added Amit mentor checkpoints in all three levels.
+- Added Founder Signal checkpoints in all three levels.
 - Added mobile controls.
 - Added detailed Markdown documentation.
 - Added high-DPI canvas rendering to improve text sharpness.
@@ -311,6 +313,9 @@ Completed:
   - renamed OneLenz hero files to URL-safe filenames
   - added `.nojekyll`
   - added `README.md` with deployment notes
+- Removed the old canvas-drawn fallback hero and fallback pet so the deployed game cannot flash the placeholder character while PNG assets are loading.
+- Added cache-busting query strings to CSS and JS includes for the GitHub Pages redeploy.
+- Set final platform x positions to Rapyder `2120`, CloudEVA `2140`, and OneLenz `2250`.
 
 ## 11. Verification Plan
 

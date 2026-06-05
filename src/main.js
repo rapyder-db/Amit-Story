@@ -5,6 +5,7 @@ const storyTitle = document.querySelector("#storyTitle");
 const storyText = document.querySelector("#storyText");
 const storyAction = document.querySelector("#storyAction");
 const modalHero = document.querySelector("#modalHero");
+const modalMascot = document.querySelector("#modalMascot");
 const pauseButton = document.querySelector("#pauseButton");
 const restartButton = document.querySelector("#restartButton");
 
@@ -28,6 +29,7 @@ const ui = {
       modalHero.alt = "";
       modalHero.classList.remove("is-visible");
     }
+    modalMascot.classList.toggle("is-visible", Boolean(story.showMascot));
     modal.classList.add("is-open");
   },
   hideStory() {
@@ -65,9 +67,9 @@ function loadMascotSprites() {
     celebrating: new Image(),
   };
 
-  sprites.front.src = "./mascot/Mascot_Front_Look.png";
-  sprites.side.src = "./mascot/Mascot_Side_Look.png";
-  sprites.celebrating.src = "./mascot/mascot_celebrating.png";
+  sprites.front.src = "./mascot/Mascot_Front_Look.png?v=20260605-amit-eva-upgrade";
+  sprites.side.src = "./mascot/Mascot_Side_Look.png?v=20260605-amit-eva-upgrade";
+  sprites.celebrating.src = "./mascot/mascot_celebrating.png?v=20260605-amit-eva-upgrade";
 
   Object.values(sprites).forEach((sprite) => {
     sprite.addEventListener("load", () => game.setPetSprites(sprites), { once: true });

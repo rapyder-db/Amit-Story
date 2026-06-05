@@ -16,6 +16,7 @@ class CloudQuestGame {
     this.lastTime = 0;
     this.lives = 3;
     this.trust = 0;
+    this.petUnlocked = false;
     this.message = "";
     this.messageTimer = 0;
     this.resizeCanvas();
@@ -101,6 +102,7 @@ class CloudQuestGame {
   restart() {
     this.lives = 3;
     this.trust = 0;
+    this.petUnlocked = false;
     this.loadLevel(0);
     this.paused = true;
     this.storyOpen = true;
@@ -227,7 +229,7 @@ class CloudQuestGame {
         h: hazard.h,
       };
       if (this.intersects(this.player, box)) {
-        this.damage("Hazard hit. EVA pulled you back.");
+        this.damage(this.petUnlocked ? "Hazard hit. EVA pulled you back." : "Hazard hit. Return to the last cloud path.");
         break;
       }
     }
@@ -256,6 +258,10 @@ class CloudQuestGame {
     }
 
     const story = window.RCQ_STORY.levels[this.levelIndex];
+    const unlockedPetNow = this.levelIndex === 0 && !this.petUnlocked;
+    if (unlockedPetNow) {
+      this.petUnlocked = true;
+    }
     this.player.victory = true;
     this.render();
 
@@ -269,6 +275,7 @@ class CloudQuestGame {
         action: "Next level",
         heroSrc: this.getHeroVictorySrc(),
         heroAlt: `${this.level.name} victory pose`,
+        showMascot: this.petUnlocked,
       });
     } else {
       this.paused = true;
@@ -277,6 +284,7 @@ class CloudQuestGame {
         ...window.RCQ_STORY.ending,
         heroSrc: this.getHeroVictorySrc(),
         heroAlt: `${this.level.name} victory pose`,
+        showMascot: this.petUnlocked,
       });
     }
   }
@@ -285,7 +293,7 @@ class CloudQuestGame {
     if (this.levelIndex < window.RCQ_LEVELS.length - 1) {
       this.loadLevel(this.levelIndex + 1);
       const story = window.RCQ_STORY.levels[this.levelIndex];
-      this.ui.showStory({ ...story, action: "Start level" });
+      this.ui.showStory({ ...story, action: "Start level", showMascot: this.petUnlocked });
     } else {
       this.restart();
     }
@@ -470,93 +478,71 @@ class CloudQuestGame {
     if (p.invuln > 0 && Math.floor(performance.now() / 100) % 2 === 0) return;
 
     const sprite = this.getHeroSprite();
-    if (sprite && sprite.complete) {
-      const drawH = 126;
-      const drawW = drawH * (sprite.naturalWidth / sprite.naturalHeight);
-      const drawX = p.x + p.w / 2 - drawW / 2;
-      const drawY = p.y + p.h - drawH + 7;
-
-      ctx.save();
-      ctx.fillStyle = "rgba(255, 216, 77, 0.28)";
-      ctx.beginPath();
-      ctx.ellipse(p.x + p.w / 2, p.y + p.h + 4, 34, 8, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-
-      ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.34)";
-      ctx.shadowBlur = 16;
-      ctx.shadowOffsetY = 9;
-      if (p.facing < 0) {
-        ctx.translate(drawX + drawW, drawY);
-        ctx.scale(-1, 1);
-        ctx.drawImage(sprite, 0, 0, drawW, drawH);
-      } else {
-        ctx.drawImage(sprite, drawX, drawY, drawW, drawH);
-      }
-      ctx.restore();
+    if (!sprite || !sprite.complete) {
       return;
     }
 
-    ctx.fillStyle = "#d59b72";
-    this.rect(ctx, p.x + 8, p.y, 24, 24);
-    ctx.fillStyle = "#111827";
-    this.rect(ctx, p.x + 8, p.y - 7, 26, 10);
-    ctx.fillStyle = "#e51f2f";
-    this.rect(ctx, p.x + 2, p.y + 24, 30, 28);
-    ctx.fillStyle = "#1f5baf";
-    this.rect(ctx, p.x + 2, p.y + 52, 12, 20);
-    this.rect(ctx, p.x + 22, p.y + 52, 12, 20);
-    ctx.fillStyle = "#28d6d2";
-    this.rect(ctx, p.x + 28, p.y + 30, 12, 18);
-    ctx.strokeStyle = "#081020";
-    ctx.lineWidth = 4;
-    ctx.strokeRect(p.x + 2, p.y + 24, 30, 28);
+    const drawH = 126;
+    const drawW = drawH * (sprite.naturalWidth / sprite.naturalHeight);
+    const drawX = p.x + p.w / 2 - drawW / 2;
+    const drawY = p.y + p.h - drawH + 7;
+
+    ctx.save();
+    ctx.fillStyle = "rgba(255, 216, 77, 0.28)";
+    ctx.beginPath();
+    ctx.ellipse(p.x + p.w / 2, p.y + p.h + 4, 34, 8, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    ctx.save();
+    ctx.shadowColor = "rgba(0, 0, 0, 0.34)";
+    ctx.shadowBlur = 16;
+    ctx.shadowOffsetY = 9;
+    if (p.facing < 0) {
+      ctx.translate(drawX + drawW, drawY);
+      ctx.scale(-1, 1);
+      ctx.drawImage(sprite, 0, 0, drawW, drawH);
+    } else {
+      ctx.drawImage(sprite, drawX, drawY, drawW, drawH);
+    }
+    ctx.restore();
   }
 
   drawPet(ctx, t) {
+    if (!this.petUnlocked) {
+      return;
+    }
+
     const x = this.pet.x;
     const y = this.pet.y;
     const sprite = this.petSprites.side || this.petSprites.front;
 
-    if (sprite && sprite.complete) {
-      const drawW = 82;
-      const drawH = 82;
-      ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.35)";
-      ctx.shadowBlur = 14;
-      ctx.shadowOffsetY = 8;
-      if (this.player.facing < 0) {
-        ctx.translate(x + drawW, y);
-        ctx.scale(-1, 1);
-        ctx.drawImage(sprite, 0, -14, drawW, drawH);
-      } else {
-        ctx.drawImage(sprite, x, y - 14, drawW, drawH);
-      }
-      ctx.restore();
-
-      ctx.save();
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.72)";
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.ellipse(x + 40, y + 28, 47, 33, 0, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.restore();
+    if (!sprite || !sprite.complete) {
       return;
     }
 
-    ctx.fillStyle = t.water;
-    this.rect(ctx, x, y + 16, 54, 42);
-    ctx.fillStyle = "#ffd84d";
-    this.rect(ctx, x + 6, y, 14, 18);
-    this.rect(ctx, x + 34, y, 14, 18);
-    ctx.fillStyle = "#081020";
-    this.rect(ctx, x + 13, y + 30, 7, 10);
-    this.rect(ctx, x + 34, y + 30, 7, 10);
-    this.rect(ctx, x + 23, y + 46, 12, 4);
-    ctx.strokeStyle = "#081020";
-    ctx.lineWidth = 4;
-    ctx.strokeRect(x, y + 16, 54, 42);
+    const drawW = 82;
+    const drawH = 82;
+    ctx.save();
+    ctx.shadowColor = "rgba(0, 0, 0, 0.35)";
+    ctx.shadowBlur = 14;
+    ctx.shadowOffsetY = 8;
+    if (this.player.facing < 0) {
+      ctx.translate(x + drawW, y);
+      ctx.scale(-1, 1);
+      ctx.drawImage(sprite, 0, -14, drawW, drawH);
+    } else {
+      ctx.drawImage(sprite, x, y - 14, drawW, drawH);
+    }
+    ctx.restore();
+
+    ctx.save();
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.72)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(x + 40, y + 28, 47, 33, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
   }
 
   drawMessage(ctx) {

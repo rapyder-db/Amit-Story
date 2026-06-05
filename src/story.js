@@ -1,45 +1,45 @@
 window.RCQ_STORY = {
-  heroName: "Maya",
+  heroName: "Amit",
   petName: "EVA",
   founderMentor: "Amit Gupta",
   intro: {
     kicker: "Founder Journey Prologue",
-    title: "From Infrastructure to Intelligent Cloud",
+    title: "Amit's Cloud Quest",
     body:
-      "Amit Gupta's public founder story starts with deep IT infrastructure experience and a customer-first lens. Maya enters the quest to turn that journey into three playable chapters: build trusted cloud foundations, govern decisions with CloudEVA, and connect business signals with OneLenz.",
+      "Amit Gupta's public founder journey begins with infrastructure experience and a customer-first lens. In this quest, Amit starts alone: first he must build the Rapyder cloud foundation, then earn EVA, the CloudEVA mascot, as an upgrade for the next stage.",
     action: "Enter Level 1",
   },
   levels: [
     {
       kicker: "Level 1 - Rapyder",
-      title: "Rapyder Ridge: Build the Cloud Foundation",
+      title: "Rapyder Ridge: Build Before You Scale",
       body:
-        "This chapter turns Amit's infrastructure-to-cloud path into a platform level. Collect the founder signals: infrastructure, customer trust, cloud adoption, AWS partnership, scale, and managed operations.",
+        "Amit enters Rapyder Ridge without a companion. This level represents the founder foundation: infrastructure discipline, customer trust, cloud adoption, AWS partnership, scale, and managed operations.",
       complete:
-        "Rapyder Ridge cleared. Maya shows how the founder journey becomes a customer-ready cloud path: not just migration, but trust, operations, and business value.",
+        "Rapyder Ridge cleared. Amit has proved the foundation: cloud is not only migration, it is trust, operations, and customer value. The upgrade gate opens, and EVA joins as the CloudEVA mascot companion.",
     },
     {
       kicker: "Level 2 - CloudEVA",
-      title: "Decision Loop Lagoon: Govern the AI Layer",
+      title: "Decision Loop Lagoon: Give Cloud a Brain",
       body:
-        "The second chapter extends the cloud foundation into intelligent decision-making. Collect ownership, reasoning, risk, audit, action, and EVA signals while avoiding ungoverned automation.",
+        "With EVA unlocked, Amit enters the decision layer. The challenge is no longer only running cloud; it is making every action explainable, owned, auditable, and connected to an outcome.",
       complete:
-        "Decision Loop Lagoon cleared. The founder signal evolves from cloud operations into decision intelligence: every action has context, ownership, and an outcome trail.",
+        "Decision Loop Lagoon cleared. Amit and EVA have turned cloud operations into decision intelligence: every action has a reason, an owner, a risk signal, and a trail.",
     },
     {
       kicker: "Level 3 - OneLenz",
-      title: "Revenue Signal Ruins: Connect the Business Signals",
+      title: "Revenue Signal Ruins: See the Whole Business",
       body:
-        "The final chapter connects customer and revenue signals into one view. Collect CRM, meetings, mail, deal context, next action, and OneLenz signals while protecting trust.",
+        "The final chapter moves from cloud decisions to business signals. Amit and EVA must connect mail, CRM, meetings, deal context, and OneLenz signals into one clear revenue path.",
       complete:
-        "Revenue Signal Ruins cleared. Maya and EVA connect scattered commercial activity into one lens, showing how cloud, decisions, and revenue signals can work together.",
+        "Revenue Signal Ruins cleared. Amit and EVA have connected scattered commercial activity into one lens, showing how technology decisions and business outcomes can move together.",
     },
   ],
   ending: {
     kicker: "Quest Complete",
-    title: "Founder Signal Complete",
+    title: "The Founder Signal Is Complete",
     body:
-      "The quest completes Amit's public founder arc in game form: infrastructure experience becomes Rapyder's cloud foundation, cloud operations evolve into CloudEVA decision intelligence, and customer signals connect through OneLenz. The win is not magic. It is a repeatable path from technology to business value.",
+      "The quest completes Amit's founder-led arc in game form: infrastructure experience becomes Rapyder's cloud foundation, the CloudEVA mascot unlocks the decision-intelligence layer, and OneLenz connects the business signals. The win is not magic. It is a repeatable path from technology to customer value.",
     action: "Play again",
   },
 };
